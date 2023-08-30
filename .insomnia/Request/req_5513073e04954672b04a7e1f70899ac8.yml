@@ -1,7 +1,7 @@
 _id: req_5513073e04954672b04a7e1f70899ac8
 type: Request
 parentId: wrk_d52312b256844e519099acf560d162d7
-modified: 1693354717828
+modified: 1693360420491
 created: 1693353146165
 url: http://127.0.0.1:4433/self-service/registration?flow=1aa31c69-da7f-4b12-8847-08d819568383
 name: (api) Create account
@@ -12,7 +12,7 @@ body:
   text: |-
     {
     	"method": "password",
-    	"password": "125my541",
+    	"password": "pa3k4j23k4j23kj4",
     	"traits": {
     		"email": "markuss.c@place.com",
       	"owner_wallet": "0x8a4f82e39a",
