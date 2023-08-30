@@ -1,0 +1,149 @@
+version: v1.0.0
+
+dsn: postgres://kratos:kratosBOY@127.0.0.1:5432/kratos_pudgy?sslmode=disable&max_conns=20&max_idle_conns=4
+
+serve:
+  public:
+    base_url: http://127.0.0.1:4433/
+    host: 127.0.0.1
+    cors:
+      allowed_origins:
+        - http://127.0.0.1:5173
+        - http://127.0.0.1:8080
+        - http://127.0.0.1:3000
+      allowed_methods:
+        - POST
+        - GET
+        - PUT
+        - PATCH
+        - DELETE
+      allowed_headers:
+        - Authorization
+        - Cookie
+        - Content-Type
+      exposed_headers:
+        - Content-Type
+        - Set-Cookie
+      enabled: true
+      debug: true
+  admin:
+    base_url: http://kratos:4434/
+    host: 127.0.0.1
+
+selfservice:
+  default_browser_return_url: http://127.0.0.1:4455/
+  allowed_return_urls:
+    - http://127.0.0.1:4455
+
+  methods:
+    password:
+      enabled: true
+    profile:
+      enabled: true
+    oidc:
+      config:
+        providers:
+          - id: google # this is `<provider-id>` in the Authorization callback URL. DO NOT CHANGE IT ONCE SET!
+            provider: google
+            client_id: 420246367257-96oag8gst4mgnhpee0lqrmd30r3sm5c3.apps.googleusercontent.com
+            client_secret: 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
+            mapper_url: "file:///home/mjend/work/pudgy-auth/schemas/oidc.google.jsonnet"
+            # Alternatively, use an URL:
+            # mapper_url: https://storage.googleapis.com/abc-cde-prd/9cac9717f007808bf17f22ce7f4295c739604b183f05ac4afb4
+            scope:
+              - email
+              - profile
+            # other supported scopes can be found in Google OAuth 2.0 dev docs
+            requested_claims:
+              id_token:
+                email:
+                  essential: true
+                email_verified:
+                  essential: true
+                given_name:
+                  essential: true
+                family_name: null
+                hd: null # If you want the Google Workspace domain
+      enabled: true
+    lookup_secret:
+      enabled: true
+    link:
+      enabled: true
+    code:
+      enabled: true
+
+  flows:
+    error:
+      ui_url: http://127.0.0.1:4455/error
+
+    settings:
+      ui_url: http://127.0.0.1:4455/settings
+      privileged_session_max_age: 15m
+      required_aal: highest_available
+
+    recovery:
+      enabled: true
+      ui_url: http://127.0.0.1:4455/recovery
+      use: code
+
+    verification:
+      enabled: true
+      ui_url: http://127.0.0.1:4455/verification
+      use: code
+      after:
+        default_browser_return_url: http://127.0.0.1:4455/
+
+    logout:
+      after:
+        default_browser_return_url: http://127.0.0.1:4455/login
+
+    login:
+      ui_url: http://127.0.0.1:4455/login
+      lifespan: 10m
+
+    registration:
+      lifespan: 10m
+      ui_url: http://127.0.0.1:4455/registration
+      after:
+        password:
+          hooks:
+            - hook: session
+            - hook: show_verification_ui
+        oidc:
+          hooks:
+            - hook: session
+            - hook: show_verification_ui
+
+log:
+  level: debug
+  format: text
+  leak_sensitive_values: true
+
+session:
+  lifespan: 72h
+  cookie:
+    domain: 127.0.0.1
+
+secrets:
+  cookie:
+    - a17d7608c7839f63415f0a11dcc88b46fdc090defa454ee65e8090bd4dc54c6a
+  cipher:
+    - 54a955135cc1568c3b630436fab8c42d
+
+ciphers:
+  algorithm: xchacha20-poly1305
+
+hashers:
+  algorithm: bcrypt
+  bcrypt:
+    cost: 8
+
+identity:
+  default_schema_id: default
+  schemas:
+    - id: default
+      url: file:///home/mjend/work/pudgy-auth/config/identity.schema.json
+
+courier:
+  smtp:
+    connection_uri: smtps://test:test@mailslurper:1025/?skip_ssl_verify=true
