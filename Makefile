@@ -27,7 +27,6 @@
 SHELL=/bin/bash -o pipefail
 
 # List of required executables
-REQUIRED_EXECUTABLES = docker-compose docker node npm go
 CHECK_EXECUTABLES := $(foreach exec,$(REQUIRED_EXECUTABLES),\
 	$(if $(shell which $(exec)),some string,$(error "$(exec) not found in PATH")))
 
