@@ -1,0 +1,25 @@
+_id: req_149582653068425a98b9bc8e54b4d5a7
+type: Request
+parentId: wrk_d52312b256844e519099acf560d162d7
+modified: 1693353777986
+created: 1693353057223
+url: http://127.0.0.1:4433/self-service/registration/flows?id=1aa31c69-da7f-4b12-8847-08d819568383
+name: (api) Get flow by id
+description: ""
+method: GET
+body: {}
+parameters: []
+headers:
+  - id: pair_5c9c77a744ef44a59be187987a612b94
+    name: ""
+    value: ""
+    description: ""
+authentication: {}
+metaSortKey: -1691887343594.5
+isPrivate: false
+settingStoreCookies: true
+settingSendCookies: true
+settingDisableRenderRequestBody: false
+settingEncodeUrl: true
+settingRebuildPath: true
+settingFollowRedirects: global

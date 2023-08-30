@@ -1,0 +1,25 @@
+_id: req_25dc1e8c3cce41d2b52fc851c96171b8
+type: Request
+parentId: wrk_d52312b256844e519099acf560d162d7
+modified: 1693353496799
+created: 1693353470440
+url: http://127.0.0.1:4434/admin/identities
+name: (api) List accounts
+description: ""
+method: GET
+body:
+  mimeType: application/json
+  text: ""
+parameters: []
+headers:
+  - name: Content-Type
+    value: application/json
+authentication: {}
+metaSortKey: -1691521091669.125
+isPrivate: false
+settingStoreCookies: true
+settingSendCookies: true
+settingDisableRenderRequestBody: false
+settingEncodeUrl: true
+settingRebuildPath: true
+settingFollowRedirects: global

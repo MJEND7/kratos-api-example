@@ -1,0 +1,41 @@
+_id: req_5513073e04954672b04a7e1f70899ac8
+type: Request
+parentId: wrk_d52312b256844e519099acf560d162d7
+modified: 1693354717828
+created: 1693353146165
+url: http://127.0.0.1:4433/self-service/registration?flow=1aa31c69-da7f-4b12-8847-08d819568383
+name: (api) Create account
+description: ""
+method: POST
+body:
+  mimeType: application/json
+  text: |-
+    {
+    	"method": "password",
+    	"password": "125my541",
+    	"traits": {
+    		"email": "markuss.c@place.com",
+      	"owner_wallet": "0x8a4f82e39a",
+      	"trait_body_id": 123,
+      	"trait_skin_id": 456,
+      	"trait_face_id": 789,
+      	"trait_head_id": 101,
+      	"penguin_name": "Frosty",
+      	"created_at": "2023-08-30T12:00:00Z",
+      	"user_id": "e7d6e7ca-4d42-4a7f-9c6a-839d64b95ea1"
+    	}
+    }
+parameters: []
+headers:
+  - name: Content-Type
+    value: application/json
+    id: pair_19cdece16b224c9c88ed3784cac11326
+authentication: {}
+metaSortKey: -1691643175644.25
+isPrivate: false
+settingStoreCookies: true
+settingSendCookies: true
+settingDisableRenderRequestBody: false
+settingEncodeUrl: true
+settingRebuildPath: true
+settingFollowRedirects: global

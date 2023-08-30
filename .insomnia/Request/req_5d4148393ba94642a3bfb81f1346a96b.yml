@@ -1,0 +1,25 @@
+_id: req_5d4148393ba94642a3bfb81f1346a96b
+type: Request
+parentId: wrk_d52312b256844e519099acf560d162d7
+modified: 1693353039686
+created: 1693352777603
+url: http://127.0.0.1:4433/self-service/registration/api
+name: "(api) Create account flow "
+description: ""
+method: GET
+body: {}
+parameters: []
+headers:
+  - id: pair_465ad7713f4243689cc6904a51e7969f
+    name: ""
+    value: ""
+    description: ""
+authentication: {}
+metaSortKey: -1692375679495
+isPrivate: false
+settingStoreCookies: true
+settingSendCookies: true
+settingDisableRenderRequestBody: false
+settingEncodeUrl: true
+settingRebuildPath: true
+settingFollowRedirects: global

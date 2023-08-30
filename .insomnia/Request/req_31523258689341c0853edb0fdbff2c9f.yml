@@ -1,0 +1,23 @@
+_id: req_31523258689341c0853edb0fdbff2c9f
+type: Request
+parentId: wrk_d52312b256844e519099acf560d162d7
+modified: 1693352760300
+created: 1693352351296
+url: http://127.0.0.1:4433/sessions/whoami
+name: Get current session off cookie
+description: ""
+method: POST
+body: {}
+parameters: []
+headers:
+  - name: User-Agent
+    value: Insomnia/2023.5.6
+authentication: {}
+metaSortKey: -1693352351296
+isPrivate: false
+settingStoreCookies: true
+settingSendCookies: true
+settingDisableRenderRequestBody: false
+settingEncodeUrl: true
+settingRebuildPath: true
+settingFollowRedirects: global
