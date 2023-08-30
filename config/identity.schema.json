@@ -26,20 +26,23 @@
             }
           }
         },
-        "owner_wallet": { "type": "string", "unique": true },
-        "trait_body_id": { "type": "integer" },
-        "trait_skin_id": { "type": "integer" },
-        "trait_face_id": { "type": "integer" },
-        "trait_head_id": { "type": "integer" },
-        "penguin_name": { "type": "string" },
-        "created_at": {
-          "type": "string",
-          "format": "date-time",
-          "default": "now()"
-        },
-        "user_id": { "type": "string", "format": "uuid", "unique": true }
+        "name": {
+          "type": "object",
+          "properties": {
+            "first": {
+              "title": "First Name",
+              "type": "string"
+            },
+            "last": {
+              "title": "Last Name",
+              "type": "string"
+            }
+          }
+        }
       },
-      "required": ["email", "penguin_name"],
+      "required": [
+        "email"
+      ],
       "additionalProperties": false
     }
   }
